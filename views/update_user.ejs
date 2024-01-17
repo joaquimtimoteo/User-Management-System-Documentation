@@ -1,0 +1,60 @@
+<%-include('include/_header')%>
+
+
+<main id="site-main">
+  <div class="container">
+   <div class="box-nav d-flex justify-between">
+    <div class="filter">
+       <a href="/"><i class="fas fa-angle-double-left"></i>All Users</a>
+    </div>
+   </div>
+   <div class="form-title text-center">
+     <h2 class="text-dark">Update User</h2>
+     <span class="text-light">Use the below form  to Update an account</span>
+   </div>
+ 
+   <form  method="POST" id="update_user">
+    <div class="new_user">
+       <div class="form-group">
+           <label for="name" class="text-light">Name</label>
+           <input type="hidden" name="id" value="<%=user._id%>">
+           <input type="text" name="name" value="<%=user.name%>" placeholder="Joaquim Timoteo">
+       </div>
+       <div class="form-group">
+           <label for="Email" class="text-light"> Email</label>
+           <input type="text" name="email" value="<%=user.email%>" placeholder="example@gmail.com">
+       </div>
+       <div class="form-group">
+        <div class="radio inline"></div>
+               <label for="gender" class="radio-label" >Gender</label>
+               <input id="status" type="radio" name="gender" value="Male"<%=user.gender=="Male"? 'checked':'' %> >
+               <label for="gender" class="radio-label">Male</label>
+               <input type="radio" name="gender" value="Female"  <%=user.gender=="Female"? 'checked':'' %> >
+               <label for="gender" class="radio-label">Female</label>
+           </div>
+          
+       </div>
+       <div class="form-group radio-container">
+           <label  id="status" for="gender" class="radio-label" style="margin-right:5px">Status</label>
+           <input  type="radio" id="label1"name="Status"style="margin-right: 166px"  value="Active"  <%=user.status=="Active"? 'checked':'' %>>
+           <label  id="status" for="gender" class="radio-label">Active</label>
+           <input id="status"  class="label2" type="radio"  name="Status" value="inactive" <%=user.status=="Inactive"? 'checked':'' %>>
+           <label  id="status" for="gender"style="margin-right: 166px"   class="text-light">Inactive</label>
+       </div>
+       
+       <button type="submit" class="btn text-dark update" style="width: 80%; padding: .9em 1em; background-color: #16db93; font-family: 'PT Sans', sans-serif; font-size: 1em; cursor: pointer; border-radius: .1em; margin: .2em 1; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#2b2d42'; this.style.color" onmouseout="this.style.backgroundColor='#16db93'; this.style.color='#dee2e6'">
+        Save
+    </button>
+    
+    </button>
+    
+
+           </div>
+       
+    </div>
+   </form>
+
+  </div>
+</main>
+
+<%-include('include/_footer')%>
